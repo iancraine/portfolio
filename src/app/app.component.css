@@ -1,0 +1,18 @@
+.page{
+    margin: 0;
+    overflow-x: hidden;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.animated-ele{
+    /* opacity: 0; */
+    /* transition: all 1s; */
+}
+.show{
+    opacity: 1;
+}
