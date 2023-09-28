@@ -19,23 +19,35 @@ export class AppComponent implements OnInit {
     this.animation();
   }
 
-  public animation(){
-    let elements = document.querySelectorAll('.animated-ele');
+  public animation():void{
+    const elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
     elements.forEach((ele) => {
-      let tl = gsap.timeline({
+      // let tl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: '.animated-ele',
+      //     start: '40% center',
+      //     end: '60% center',
+      //     scrub: false,
+      //     markers: true,
+      //     toggleActions: 'play reverse play'
+      //   }
+      // });
+      // tl.to('.animated-ele',{
+      //   opacity: 1,
+      //   duration: .5
+      // })
+      gsap.to(ele,{
+        opacity: 1,
         scrollTrigger: {
-          trigger: '.animated-ele',
-          start: 'center center',
-          end: 'bottom center',
-          scrub: true,
+          trigger: ele,
+          start: '20% center',
+          end: '60% center',
+          scrub: false,
           markers: true,
+          toggleActions: 'play reverse play reverse'
         }
-      });
-      tl.to('.animated-ele',{
-        opacity: 0,
-        // duration: 5
       })
-    })
+    });
     
   }
 }
