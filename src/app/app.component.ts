@@ -17,31 +17,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.animation();
+    this.startAnimation();
+
   }
 
   public animation():void{
     const elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
     elements.forEach((ele) => {
-      // let tl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: '.animated-ele',
-      //     start: '40% center',
-      //     end: '60% center',
-      //     scrub: false,
-      //     markers: true,
-      //     toggleActions: 'play reverse play'
-      //   }
-      // });
-      // tl.to('.animated-ele',{
-      //   opacity: 1,
-      //   duration: .5
-      // })
       gsap.to(ele,{
         opacity: 1,
+        y: 50,
         scrollTrigger: {
           trigger: ele,
           start: '20% center',
-          end: '60% center',
+          end: '80% center',
           scrub: false,
           markers: true,
           toggleActions: 'play reverse play reverse'
@@ -50,4 +39,19 @@ export class AppComponent implements OnInit {
     });
     
   }
+  public startAnimation():void{
+    let tl = gsap.timeline();
+    tl.to('.color-one',{
+      x:'-100vw',
+      duration: .4,
+    });
+    tl.to('.color-two',{
+      y:'-100vh',
+      duration: .5,
+    });
+    tl.to('.color-three',{
+      x:'100vw',
+      duration: .3,
+    });
+  };
 }
