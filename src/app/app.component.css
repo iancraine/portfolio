@@ -2,15 +2,18 @@
     margin: 0;
     overflow-x: hidden;
 }
+ul{
+    list-style: none;
+}
 .navbar{
+    padding-top: 1rem;
     width: 100vw;
     display: flex;
     justify-content: space-between;
     position: fixed;
 }
-ul{
+nav>ul{
     display: flex;
-    list-style: none;
     gap: 5rem;
 }
 nav{
@@ -58,3 +61,56 @@ section{
     background-color: purple;
     z-index: 1;
 }
+.intro{
+    font-size: 7vw;
+}
+.about{
+    display: grid;
+    grid-template-columns: 20% 50%;
+}
+.skills-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "skills"
+    ;
+}
+.skills-title{
+    grid-area: title;
+    justify-self: center;
+}
+.skills{
+    grid-area: skills;
+    display: grid;
+    grid-template-areas: 
+    ". front back other ."
+    ;
+    grid-template-columns: 20% 1fr 1fr 1fr 20%;
+}
+.front-container{
+    display: grid;
+    grid-area: front;
+}
+.back-container{
+    grid-area: back;
+    border-right: 3px dotted white;
+    border-left: 3px dotted white;
+}
+.other-container{
+    grid-area: other;
+}
+.back-container,.front-container,.other-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.skills>*{
+    padding: 0 1rem 0 1rem;
+    margin-top: 2rem;
+}
+
+
+

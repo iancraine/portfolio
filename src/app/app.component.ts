@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 @Component({
   selector: 'app-root',
@@ -11,17 +12,24 @@ gsap.registerPlugin(ScrollTrigger);
 })
 export class AppComponent implements OnInit {
   title = 'Portfolio';
+  public words:Array<string> =[
+    'Ian',
+    'A Developer',
+    'A Traveler',
+    'A Enjoyer'
+  ];
 
   constructor(){
   }
 
   ngOnInit(): void {
-    this.animation();
+    // this.animation();
     this.startAnimation();
-
   }
 
-  public animation():void{
+  public animation(){
+    
+
     const elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
     elements.forEach((ele) => {
       gsap.to(ele,{
@@ -35,8 +43,25 @@ export class AppComponent implements OnInit {
           markers: true,
           toggleActions: 'play reverse play reverse'
         }
-      })
+      }).pause()
     });
+    gsap.to('.cursor',{
+      opacity: 0,
+      ease: 'power2.inOut',
+      repeat: -1
+    });
+
+
+
+    //Not working
+    let mainTl = gsap.timeline();
+
+    this.words?.forEach(word => {
+      let timel = gsap.timeline({repeat:1, yoyo: true});
+      timel.to('.text',{duration:1, text:{value:word}});
+      mainTl.add(timel);
+    })
+
     
   }
   public startAnimation():void{
@@ -44,6 +69,7 @@ export class AppComponent implements OnInit {
     tl.to('.color-one',{
       x:'-100vw',
       duration: .4,
+      delay: .2
     });
     tl.to('.color-two',{
       y:'-100vh',
@@ -52,6 +78,7 @@ export class AppComponent implements OnInit {
     tl.to('.color-three',{
       x:'100vw',
       duration: .3,
+      onComplete: this.animation
     });
   };
 }

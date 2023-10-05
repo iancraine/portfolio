@@ -1,9 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@400;500;600&display=swap');
-body{
-    background-color: rgb(42, 38, 63);
-    color: white;
-    font-family: 'Lato', sans-serif;
+
+:root {
+    --header-height: 3.5rem;
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(247, 44%, 12%);
+    --first-color-lighten: hsl(247, 42%, 26%);
+    --title-color: hsl(220, 48%, 28%);
+    --text-color: hsl(0, 0%, 100%);
+    --body-color: rgb(238, 91, 28);
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: 'Lato', sans-serif;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+
+* {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
 }
