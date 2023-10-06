@@ -13,10 +13,9 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger);
 export class AppComponent implements OnInit {
   title = 'Portfolio';
   public words:Array<string> =[
-    'Ian',
-    'A Developer',
-    'A Traveler',
-    'A Enjoyer'
+    'A Developer.',
+    'A Traveler.',
+    'A Learner.'
   ];
 
   constructor(){
@@ -25,6 +24,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // this.animation();
     this.startAnimation();
+    this.text();
   }
 
   public animation(){
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
         y: 50,
         scrollTrigger: {
           trigger: ele,
-          start: '20% center',
+          start: 'top 80%',
           end: '80% center',
           scrub: false,
           markers: true,
@@ -50,19 +50,20 @@ export class AppComponent implements OnInit {
       ease: 'power2.inOut',
       repeat: -1
     });
+  }
 
-
-
-    //Not working
-    let mainTl = gsap.timeline();
+  public text(){
+    let mainTl = gsap.timeline({repeat:-1,});
 
     this.words?.forEach(word => {
-      let timel = gsap.timeline({repeat:1, yoyo: true});
-      timel.to('.text',{duration:1, text:{value:word}});
+      let timel = gsap.timeline({
+        repeat:1, 
+        yoyo: true,
+      repeatDelay: 1});
+      timel.to('.text',{duration:1, text:word});
       mainTl.add(timel);
     })
 
-    
   }
   public startAnimation():void{
     let tl = gsap.timeline();
@@ -78,7 +79,7 @@ export class AppComponent implements OnInit {
     tl.to('.color-three',{
       x:'100vw',
       duration: .3,
-      onComplete: this.animation
+      onComplete: () => {this.animation();}
     });
   };
 }
