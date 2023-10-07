@@ -149,11 +149,31 @@ section{
 .projectsTitle{
     grid-area: projectsTitle;
 }
-.project-link{
-    display: inline-block;
-    font-size: 2rem;
-    padding: 1rem 1rem 0 0;
+.planDesc, .woDesc{
+    justify-self: center;
+    align-self: center;
 }
+.project-link{
+    /* display: inline-block; */
+    font-size: 2rem;
+    padding-left: 1rem;
+    right: 0;
+}
+.projectTitle, .projectAbout{
+    text-align: end;
+    margin-bottom: 1rem;
+}
+.project-link:hover{
+    cursor: pointer;
+}
+.projectTitle{
+    margin-bottom: 1rem;
+}
+.icons{
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 
 

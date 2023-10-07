@@ -82,4 +82,10 @@ export class AppComponent implements OnInit {
       onComplete: () => {this.animation();}
     });
   };
+
+  public newTab(link: string){
+    window.open(
+      link, "_blank"
+    )
+  }
 }

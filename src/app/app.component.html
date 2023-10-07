@@ -86,25 +86,29 @@
 
       <img src="../assets/worktout.png" alt="" class="woImg">
       <div class="woDesc">
-        <h1>Worktout</h1>
-        <p>Developed a full stack workout application built to log and
+        <h1 class="projectTitle">Worktout Workout Companion</h1>
+        <p class="projectAbout">Developed a full stack workout application built to log and
           track progress throughout workouts, and help plan a full workout routine. Also serves as a
           database for beginners to easily find workouts targeting specific muscle groups. Implements
           Java, SpringBoot, Angular, and a PostgreSQL database. Deployed utilizing AWS RDS, Heroku,
           and Netlify</p>
-          <i class="ri-github-fill project-link"></i>
-          <i class="ri-external-link-line project-link"></i>
+          <div class="icons">
+            <i class="ri-github-fill project-link" (click)="newTab('https://github.com/iancraine/Workout')"></i>
+            <i class="ri-external-link-line project-link" (click)="newTab('https://worktout.com')"></i>
+          </div>
       </div>
 
       <img src="../assets/planner.png" alt="" class="planImg">
       <div class="planDesc">
-        <h1>PlannerAhead Meal Planner</h1>
-        <p>Worked in a team to develop a full stack meal planning Web
+        <h1 class="projectTitle">PlannerAhead Meal Planner</h1>
+        <p class="projectAbout">Worked in a team to develop a full stack meal planning Web
           Application, in which a registered user can build and save recipes into meal plans of any size.
           Implemented Java, Vue.Js, a PostgreSQL database, SpringBoot, and JSON. Deployed using
           Heroku and Netlify.</p>
-          <i class="ri-github-fill project-link"></i>
-          <i class="ri-external-link-line project-link"></i>
+          <div class="icons">
+            <i class="ri-github-fill project-link" (click)="newTab('https://github.com/iancraine/PlannerAheadFinal')"></i>
+            <i class="ri-external-link-line project-link" (click)="newTab('https://planner-ahead-app.netlify.app')"></i>
+          </div>
       </div>
 
     </div>
