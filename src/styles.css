@@ -8,7 +8,7 @@
     --first-color: hsl(247, 44%, 12%);
     --first-color-lighten: hsl(247, 42%, 26%);
     --title-color: hsl(220, 48%, 28%);
-    --text-color: hsl(0, 0%, 100%);
+    --text-color: black(0, 0%, 100%);
     --body-color: rgb(238, 91, 28);
     /*========== Font and typography ==========*/
     /*.5rem = 8px | 1rem = 16px ...*/

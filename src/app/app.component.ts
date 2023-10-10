@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   public animation(){
     
 
-    const elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
+    let elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
     elements.forEach((ele) => {
       gsap.to(ele,{
         opacity: 1,
@@ -45,11 +45,87 @@ export class AppComponent implements OnInit {
         }
       }).pause()
     });
+
     gsap.to('.cursor',{
       opacity: 0,
       ease: 'power2.inOut',
       repeat: -1
     });
+
+    gsap.to('.about-section', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: '.about-section',
+        start: 'top 80%',
+        end: '80% center',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+
+    gsap.to('.skills-section', {
+      opacity: 1,
+      y: 50,
+      scrollTrigger: {
+        trigger: '.skills-section',
+        start: 'top 80%',
+        end: 'bottom center',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+
+    gsap.from('.projectsTitle',{
+      x: 1000,
+      duration: 1,
+      scrollTrigger: {
+        trigger:'.projects-section',
+        start: 'top 80%',
+        end: 'bottom center',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse'
+      }
+    });
+
+    elements = gsap.utils.toArray<HTMLElement>('.slide');
+    elements.forEach((ele) => {
+      gsap.from(ele,{
+        x: -1000,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger:'.projects-section',
+          start: 'top 80%',
+          end: 'bottom center',
+          scrub: false,
+          markers: true,
+          toggleActions: 'play reverse play reverse'
+        }
+      });
+    });
+
+    elements = gsap.utils.toArray<HTMLElement>('.imgTrans');
+    elements.forEach((ele) => {
+      gsap.from(ele,{
+        x: 1000,
+        opacity: 0,
+        delay: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger:'.projects-section',
+          start: 'top 80%',
+          end: 'bottom center',
+          scrub: false,
+          markers: true,
+          toggleActions: 'play reverse play reverse'
+        }
+      });
+    });
+
   }
 
   public text(){
@@ -65,6 +141,7 @@ export class AppComponent implements OnInit {
     })
 
   }
+
   public startAnimation():void{
     let tl = gsap.timeline();
     tl.to('.color-one',{
