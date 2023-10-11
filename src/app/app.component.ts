@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -18,7 +19,9 @@ export class AppComponent implements OnInit {
     'A Learner.'
   ];
 
-  constructor(){
+  @ViewChild("skills") skills!: ElementRef;
+
+  constructor(private router: Router){
   }
 
   ngOnInit(): void {
@@ -58,7 +61,7 @@ export class AppComponent implements OnInit {
       scrollTrigger: {
         trigger: '.about-section',
         start: 'top 80%',
-        end: '80% center',
+        end: '80% 30%',
         scrub: false,
         markers: true,
         toggleActions: 'play reverse play reverse'
@@ -80,7 +83,7 @@ export class AppComponent implements OnInit {
 
     gsap.from('.projectsTitle',{
       x: 1000,
-      duration: 1,
+      duration: .5,
       scrollTrigger: {
         trigger:'.projects-section',
         start: 'top 80%',
@@ -96,7 +99,7 @@ export class AppComponent implements OnInit {
       gsap.from(ele,{
         x: -1000,
         duration: 1,
-        delay: 1,
+        delay: .5,
         scrollTrigger: {
           trigger:'.projects-section',
           start: 'top 80%',
@@ -113,7 +116,7 @@ export class AppComponent implements OnInit {
       gsap.from(ele,{
         x: 1000,
         opacity: 0,
-        delay: 1,
+        delay: .5,
         duration: 1,
         scrollTrigger: {
           trigger:'.projects-section',
@@ -163,6 +166,10 @@ export class AppComponent implements OnInit {
   public newTab(link: string){
     window.open(
       link, "_blank"
-    )
+    );
+  }
+
+  public scroll(target: HTMLElement){
+    target.scrollIntoView({behavior: "smooth", block: "start"});
   }
 }

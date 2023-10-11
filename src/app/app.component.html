@@ -1,17 +1,17 @@
 <div class="page">
   <div class="navbar">
-    <a class="logo">IC</a>
+    <a class="logo" (click)="scroll(intro)">IC</a>
     <nav>
       <ul>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li (click)="scroll(about)">About</li>
+        <li (click)="scroll(skills)">Skills</li>
+        <li (click)="scroll(projects)">Projects</li>
+        <li (click)="scroll(contact)">Contact</li>
       </ul>  
     </nav>
   </div>
 
-  <section class="animated-ele">
+  <section class="animated-ele" #intro>
     <h1 class="intro">
       <span class="box"></span>
       <span class="hey">Hey, <br>Im Ian, <br> </span>
@@ -20,7 +20,7 @@
     </h1>
   </section>
 
-  <section class="about-section">
+  <section class="about-section" #about>
     <div class="about">
       <h1>About Me</h1>
       <p>Hello my name is Ian Craine and ever since I first opened my grandma's 5yr old laptop
@@ -38,7 +38,7 @@
     </div>
   </section>
 
-  <section class="skills-section">
+  <section class="skills-section" #skills>
     <div class="skills-container">
       <h2 class="skills-title">Technology</h2>
       <div class="skills">
@@ -79,7 +79,7 @@
     </div>
   </section>
   
-  <section class="projects-section">
+  <section class="projects-section" #projects>
     <div class="projects">
 
       <div class="titleGrid">
@@ -108,7 +108,7 @@
       <!-- <div class="planImg imgTrans"></div> -->
       <div class="planDesc">
         <div>
-          <h1 class="projectTitle slide">PlannerAhead Meal Planner</h1>
+          <h1 class="projectTitle slide">Planner Ahead Meal Planner</h1>
         </div>
         <div>
           <p class="projectAbout slide">Worked in a team to develop a full stack meal planning Web
@@ -125,13 +125,13 @@
     </div>
   </section>
 
-  <section class="animated-ele">
+  <section class="animated-ele contact-section" #contact style="min-height: 70vh;">
     <div class="contact-container">
       <div class="contact-title">
         <h1>Get In Contact</h1>
       </div>
       <div class="form-area">
-        <form action="">
+        <form name="contact-me" action="">
           <input type="text" placeholder="Name"><br><br>
           <input type="text" placeholder="Email"><br><br>
           <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea><br><br>
@@ -139,10 +139,10 @@
         </form>
       </div>
       <div class="my-links">
-        <h2>Ian Craine</h2>
+        <h2 style="text-align: center;">Ian Craine</h2>
 
-        <i class="ri-github-fill project-link" (click)="newTab('https://github.com/iancraine/PlannerAheadFinal')"></i>
-        <i class="ri-linkedin-box-fill project-link" (click)="newTab('https://github.com/iancraine/PlannerAheadFinal')"></i>
+        <i class="ri-github-fill project-link" (click)="newTab('https://github.com/iancraine')"></i>
+        <i class="ri-linkedin-box-fill project-link" (click)="newTab('https://www.linkedin.com/in/ian-craine/')"></i>
         <i class="ri-mail-line project-link"></i>
       </div>
     </div>
