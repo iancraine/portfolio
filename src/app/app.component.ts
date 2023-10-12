@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   public animation(){
     
 
-    let elements = gsap.utils.toArray<HTMLElement>('.animated-ele');
+    let elements = gsap.utils.toArray<HTMLElement>('.fade-in');
     elements.forEach((ele) => {
       gsap.to(ele,{
         opacity: 1,
@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
         scrollTrigger: {
           trigger: ele,
           start: 'top 80%',
-          end: '80% center',
+          end: 'bottom 30%',
           scrub: false,
           markers: true,
           toggleActions: 'play reverse play reverse'
