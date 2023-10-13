@@ -50,7 +50,6 @@ export class AppComponent implements OnInit {
           start: 'top 80%',
           end: 'bottom 30%',
           scrub: false,
-          markers: true,
           toggleActions: 'play reverse play reverse'
         }
       }).pause()
@@ -70,7 +69,6 @@ export class AppComponent implements OnInit {
         start: 'top 80%',
         end: '80% 30%',
         scrub: false,
-        markers: true,
         toggleActions: 'play reverse play reverse'
       }
     });
@@ -83,7 +81,6 @@ export class AppComponent implements OnInit {
         start: 'top 80%',
         end: 'bottom center',
         scrub: false,
-        markers: true,
         toggleActions: 'play reverse play reverse'
       }
     });
@@ -96,7 +93,6 @@ export class AppComponent implements OnInit {
         start: 'top 80%',
         end: 'bottom center',
         scrub: false,
-        markers: true,
         toggleActions: 'play reverse play reverse'
       }
     });
@@ -112,7 +108,6 @@ export class AppComponent implements OnInit {
           start: 'top 80%',
           end: 'bottom center',
           scrub: false,
-          markers: true,
           toggleActions: 'play reverse play reverse'
         }
       });
@@ -130,7 +125,6 @@ export class AppComponent implements OnInit {
           start: 'top 80%',
           end: 'bottom center',
           scrub: false,
-          markers: true,
           toggleActions: 'play reverse play reverse'
         }
       });
