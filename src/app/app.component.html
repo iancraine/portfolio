@@ -2,20 +2,18 @@
   <div class="navbar">
     <div class="nav-title">
       <a class="logo" (click)="scroll(intro)">IC</a>
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
+      <i class="ri-menu-line toggle-button" (click)="toggleNav()"></i>
     </div>
-    <nav>
-      <ul>
+
+    
+
+    <ul class="nav" [class.showNav]="!showNav">
         <li (click)="scroll(about)">About</li>
         <li (click)="scroll(skills)">Skills</li>
         <li (click)="scroll(projects)">Projects</li>
         <li (click)="scroll(contact)">Contact</li>
-      </ul>  
-    </nav>
+    </ul>  
+
   </div>
 
   <section class="fade-in intro-section" #intro>

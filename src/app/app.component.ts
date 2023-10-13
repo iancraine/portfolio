@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
     'A Traveler.',
     'A Learner.'
   ];
+  public showNav: boolean = false;
 
   @ViewChild("skills") skills!: ElementRef;
 
@@ -28,6 +29,12 @@ export class AppComponent implements OnInit {
     // this.animation();
     this.startAnimation();
     this.text();
+  }
+
+  public toggleNav(){
+    if(this.showNav){
+      this.showNav = false;
+    }else{this.showNav = true;}
   }
 
   public animation(){
@@ -171,5 +178,8 @@ export class AppComponent implements OnInit {
 
   public scroll(target: HTMLElement){
     target.scrollIntoView({behavior: "smooth", block: "start"});
+    if(this.showNav){
+      this.showNav=false;
+    }
   }
 }
