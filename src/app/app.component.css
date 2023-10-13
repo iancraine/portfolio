@@ -94,6 +94,9 @@ li:hover, .logo:hover{
     padding: 0 0 0 0;
     padding-bottom: 10rem;
 }
+.contact-section{
+    margin-bottom: 5rem;
+}
 
 .page-animation{
     width: 100%;
