@@ -149,16 +149,21 @@ export class AppComponent implements OnInit {
   public startAnimation():void{
     let tl = gsap.timeline();
     tl.to('.color-one',{
-      x:'-100vw',
+      x:'-200vw',
       duration: .4,
+      ease: "power4.in",
       delay: .2
     });
     tl.to('.color-two',{
-      y:'-100vh',
+      y:'-200vh',
+      ease: "power4.in",
+
       duration: .5,
     });
     tl.to('.color-three',{
-      x:'100vw',
+      x:'200vw',
+      ease: "power4.in",
+
       duration: .3,
       onComplete: () => {this.animation();}
     });
